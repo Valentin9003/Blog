@@ -41,7 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Statistics", "Statistics", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statistics.Infrastructure", "Statistics\Statistics.Infrastructure\Statistics.Infrastructure.csproj", "{FED433C0-9633-4E36-B775-ACD1545A9F7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics.Domain", "Statistics.Domain\Statistics.Domain.csproj", "{8C9EEFF9-3E79-43AE-AECA-28CF43174C15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics.Domain", "Statistics\Statistics.Domain\Statistics.Domain.csproj", "{8C9EEFF9-3E79-43AE-AECA-28CF43174C15}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statistics.Application", "Statistics\Statistics.Application\Statistics.Application.csproj", "{00B8496F-B615-4A50-9243-E11EC3DA1BC5}"
 EndProject
