@@ -1,0 +1,21 @@
+﻿using System;
+
+namespace Common.Domain.Exceptions
+{
+    public abstract class BaseDomainException : Exception
+    {
+        private string error;
+
+        public string Error
+        {
+            get
+            {
+                return this.error ?? base.Message;
+            }
+            set
+            {
+                this.error = value;
+            }
+        }
+    }
+}
