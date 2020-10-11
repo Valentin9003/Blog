@@ -4,9 +4,10 @@ namespace Article.Domain.Exceptions
 {
     public class InvalidPhoneNumberException : BaseDomainException
     {
-        public InvalidPhoneNumberException(string error)
+        public InvalidPhoneNumberException()
         {
-            this.Error = error;
         }
+
+        public InvalidPhoneNumberException(string error) => this.Error = error; 
     }
 }

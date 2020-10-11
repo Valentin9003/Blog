@@ -1,26 +1,26 @@
 ﻿using Article.Domain.Exceptions;
 using Common.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static Article.Domain.Models.ModelConstants.PhoneNumberConstants;
 namespace Article.Domain.Models
 {
     internal class PhoneNumber
     {
-        internal PhoneNumber()
+        internal PhoneNumber(string phoneNumber)
         {
+            this.Validate(phoneNumber);
 
         }
 
-        public string Phone { get; private set; }
+        public string Number{ get; private set; }
+
+        public static implicit operator string(PhoneNumber number) => number.Number;
+
+        public static implicit operator PhoneNumber(string number) => new PhoneNumber(number);
 
         private void Validate(string phoneNumber)
         {
-            Guard.ValidateRegex<InvalidPhoneNumberException>(phoneNumber, PhoneNumberRegex, "Phone number must start with a '+' and contain only digits afterwards.");
+            Guard.AgainstEmptyString<InvalidPhoneNumberException>(phoneNumber,nameof(Number));
+            Guard.ValidateRegex<InvalidPhoneNumberException>(phoneNumber, PhoneNumberRegex, PhoneNumberErrorMessage);
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Article.Domain.Models
         internal class PhoneNumberConstants
         {
             internal const string PhoneNumberRegex = "";
+
+            internal const string PhoneNumberErrorMessage = "";
         }
     }
 }
