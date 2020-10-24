@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Infrastructure.Persistence
+namespace Identity.Infrastructure
 {
-    class User
+    public static class IdentityConfigurations
     {
     }
 }
