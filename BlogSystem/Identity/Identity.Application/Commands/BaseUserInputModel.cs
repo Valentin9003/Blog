@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Application.Commands.LoginUserCommand
+namespace Identity.Application.Commands
 {
-    public class LoginUserInputModel
+    public abstract class BaseUserInputModel
     {
         public string Username { get; set; } = default;
 

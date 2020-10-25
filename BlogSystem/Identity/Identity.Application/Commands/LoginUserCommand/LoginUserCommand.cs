@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.Commands.LoginUserCommand
 {
-    public class LoginUserCommand : LoginUserInputModel, IRequest<Result<LoginUserOutputModel>>
+    public class LoginUserCommand : BaseUserInputModel, IRequest<Result<LoginUserOutputModel>> // TODO:
     {
         public class LoginUserHandler : IRequestHandler<LoginUserCommand, Result<LoginUserOutputModel>>
         {

@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.Commands.ChangePasswordCommand
 {
-    public class ChangePasswordInputModel
+   public  class ChangePasswordInputModel
     {
-        public string UserId { get; set; } = default;
+        public ChangePasswordInputModel(
+           string userId,
+           string currentPassword,
+           string newPassword)
+        {
+            this.UserId = userId;
+            this.CurrentPassword = currentPassword;
+            this.NewPassword = newPassword;
+        }
 
-        public string NewPassword { get; set; } = default;
+        public string UserId { get; }
 
-        public string CurrentPassword { get; set; } = default;
+        public string CurrentPassword { get; }
+
+        public string NewPassword { get; }
     }
 }

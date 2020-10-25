@@ -12,6 +12,8 @@ namespace Identity.Application.Commands.LoginUserCommand
         {
             this.Token = token;
         }
+        public string UserId { get; set; } = default;
+
         public string Token { get; set; } = default;
     }
 }
