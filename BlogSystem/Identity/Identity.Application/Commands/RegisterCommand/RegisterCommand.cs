@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.Application.Commands.CreateUserCommand
+namespace Identity.Application.Commands.RegisterCommand
 {
-    class CreateUserCommand
+    public class RegisterCommand
     {
     }
 }

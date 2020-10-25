@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.Commands.LoginUserCommand
 {
-    class LoginUserOutputModel
+   public class LoginUserOutputModel
     {
+        public LoginUserOutputModel(string token)
+        {
+            this.Token = token;
+        }
+        public string Token { get; set; } = default;
     }
 }

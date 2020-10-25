@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Identity.Application.Commands.LoginUserCommand
 {
-    class LoginUserInputModel
+    public class LoginUserInputModel
     {
+        public string Username { get; set; } = default;
+
+        public string Password { get; set; } = default;
     }
 }
