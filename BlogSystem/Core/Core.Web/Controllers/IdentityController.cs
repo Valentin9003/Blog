@@ -2,23 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlogSystem.Web.Common;
 using Core.Web.Common;
+using Identity.Application.Commands.ChangePasswordCommand;
+using Identity.Application.Commands.LoginUserCommand;
+using Identity.Application.Commands.RegisterCommand;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Web.Controllers
 {
     public class IdentityController : ApiController
     {
-        public Task<ActionResult> Register() => this.Mediator.Send();
+        [HttpPost]
+        [Route(nameof(Register))]
+        public async Task<ActionResult> Register(RegisterUserCommand command) 
+            => await this.Send(command);
 
-        public Task<ActionResult> Login()
-        {
-            return null;
-        }
+        [HttpPost]
+        [Route(nameof(Login))]
+        public async Task<ActionResult<LoginUserOutputModel>> Login(LoginUserCommand command)
+          => await this.Send(command);
 
-        public Task<ActionResult> ChangePassword()
-        {
-            return null;
-        }
+        [HttpPut]
+        [Authorize]
+        [Route(nameof(Register))]
+        public Task<ActionResult> ChangePassword(ChangePasswordCommand command)
+         => this.Send(command);
     }
 }

@@ -1,8 +1,10 @@
 ﻿using BlogSystem.Web.Common;
+using Common.Application;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
+
 
 namespace Core.Web.Common
 {
@@ -16,8 +18,13 @@ namespace Core.Web.Common
             => this.mediator ??= this.HttpContext
                 .RequestServices
                 .GetService<IMediator>();
-
+        
         protected Task<ActionResult<TResult>> Send<TResult>(IRequest<TResult> request)
              => this.Mediator.Send(request).ToActionResult();
+        protected Task<ActionResult> Send(IRequest<Result> request)
+           => this.Mediator.Send(request).ToActionResult();
+
+        protected Task<ActionResult<TResult>> Send<TResult>(IRequest<Result<TResult>> request)
+            => this.Mediator.Send(request).ToActionResult();
     }
 }

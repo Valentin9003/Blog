@@ -1,16 +1,12 @@
 ﻿using Common.Application;
 using Identity.Application.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Identity.Application.Commands.LoginUserCommand
 {
-    public class LoginUserCommand : BaseUserInputModel, IRequest<Result<LoginUserOutputModel>> // TODO:
+    public class LoginUserCommand : BaseUserInputModel, IRequest<Result<LoginUserOutputModel>> 
     {
         public class LoginUserHandler : IRequestHandler<LoginUserCommand, Result<LoginUserOutputModel>>
         {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Application;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,30 @@ namespace BlogSystem.Web.Common
             }
 
             return result;
+        }
+
+        public static async Task<ActionResult> ToActionResult(this Task<Result> resultTask)
+        {
+            var result = await resultTask;
+
+            if (!result.Succeeded)
+            {
+                return new BadRequestObjectResult(result.Errors);
+            }
+
+            return new OkResult();
+        }
+
+        public static async Task<ActionResult<TData>> ToActionResult<TData>(this Task<Result<TData>> resultTask)
+        {
+            var result = await resultTask;
+
+            if (!result.Succeeded)
+            {
+                return new BadRequestObjectResult(result.Errors);
+            }
+
+            return result.Data;
         }
     }
 }

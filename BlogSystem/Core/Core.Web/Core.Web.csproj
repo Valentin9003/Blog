@@ -24,5 +24,9 @@
     <ProjectCapability Include="DynamicFileNesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Identity\Identity.Application\Identity.Application.csproj" />
+  </ItemGroup>
+
 
 </Project>
