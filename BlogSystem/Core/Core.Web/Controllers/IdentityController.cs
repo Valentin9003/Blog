@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BlogSystem.Web.Common;
+﻿using System.Threading.Tasks;
 using Core.Web.Common;
 using Identity.Application.Commands.ChangePasswordCommand;
 using Identity.Application.Commands.LoginUserCommand;
